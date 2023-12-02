@@ -1,0 +1,29 @@
+<body>
+    <div class="header">
+        <a href="#">
+            <img src="assets/images/logo.png" alt="logo" width="15%" height="20%">
+        </a>
+    </div>
+    <form action="" #f="ngForm" (ngSubmit)="f.form.valid&&onSubmit()" novalidate>
+        <div class="container d-flex justify-content-center">
+            <div class="card">
+                <h1>SIGN IN</h1>
+                <input type="email" placeholder="Enter a Email" name="email" [(ngModel)]="loginForm.email" #email="ngModel" required>
+                <p *ngIf="this.submit&&email.errors?.['required']">Enter valid Email !!!</p>
+                <input type="password" name="password" id="" placeholder="Enter a Password" [(ngModel)]="loginForm.password" #password="ngModel" required minlength="8">
+                <p *ngIf="this.submit&&password.errors?.['required']">Enter a Password !!!</p>
+                <p *ngIf="this.submit&&password.errors?.['minlength']">Enter a Strong Password !!!</p>
+                <input type="submit" class="smt" placeholder="LOG IN" [disabled]="this.loading" (click)="submit=true">
+                <div  class="text-center mt-2" *ngIf="this.loading">
+                    <div class="spinner-border text-primary " role="status">
+                    <span class="sr-only"></span>
+                    </div>
+                </div>
+                <span class="text-danger" *ngIf="this.errorMessage">
+                <p [innerText]="this.errorMessage"></p>
+                </span>
+                <p class="mt-4 reg">New user Register here? <a href="javascript:void(0);" routerLink="/register">Register</a></p>
+            </div>
+        </div>
+    </form>
+</body>

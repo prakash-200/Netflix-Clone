@@ -1,0 +1,30 @@
+<body>
+    <div class="header">
+        <a href="#">
+            <img src="assets/images/logo.png" alt="logo" width="15%" height="20%">
+        </a>
+    </div>
+    <form action="" #f="ngForm" novalidate (ngSubmit)="f.form.valid&&onSubmit()">
+        <div class="container d-flex justify-content-center">
+            <div class="card">
+                <h1>REGISTER</h1>
+                <input type="text" placeholder="Enter your Name" name="name" [(ngModel)]="registerForm.name" #name="ngModel" id="" required>
+                <p *ngIf="this.submit&&name.errors?.['required']">Enter a Valid Username !!!</p>
+                <input type="email" placeholder="Enter a Email" class="eml" name="email" [(ngModel)]="registerForm.email" #email="ngModel" required>
+                <p *ngIf="this.submit&&email.errors?.['required']">Enter a valid Email !!!</p>
+                <input type="password" name="password" id="" placeholder="Enter a Password" [(ngModel)]="registerForm.password" #password="ngModel" required minlength="8">
+                <p *ngIf="this.submit&&password.errors?.['required']">Enter a Password !!!</p>
+                <p *ngIf="this.submit&&password.errors?.['minlength']">Password Length Mismatch !!!</p>
+                <input type="submit" class="smt" placeholder="SUBMIT" (click)="submit=true" [disabled]="this.loading" value="Register">
+                <div  class="text-center mt-2" *ngIf="this.loading">
+                    <div class="spinner-border text-primary " role="status">
+                    <span class="sr-only"></span>
+                    </div>
+                </div>
+                <span class="text-danger" *ngIf="this.errorMessage">
+                <p [innerText]="this.errorMessage"></p>
+                </span>
+            </div>
+        </div>
+    </form>
+</body>

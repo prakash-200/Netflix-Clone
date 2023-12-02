@@ -1,0 +1,48 @@
+*{
+    background-color: black;
+}
+
+h2{
+    color: white;
+    font-size: large;
+}
+
+.movie{
+  margin-top: 30px;
+}
+
+.movie-slider img:hover{
+  position: relative;
+  scale: 1.1;
+  border: 5px;
+}
+
+.movie-slider {
+    height: 300px;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 11 */
+  }
+  
+  .movie-slider::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+  
+  .movie-card {
+    display: inline-block; /* or use flex: 0 0 auto; */
+    margin-right: 15px;
+    text-align: center;
+  }
+  
+  .movie-card img {
+    /* max-width: 100%; */
+    position: relative;
+    height: auto;
+    border-radius: 8px;
+    height: 250px;
+    width: 180px;
+    transition: .5s;
+  }
+

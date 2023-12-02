@@ -1,0 +1,61 @@
+<body>
+  <div class="movie">
+    <h2 class="p-3">ACTION MOVIES</h2>
+<div class="movie-slider">
+    <div *ngFor="let movie of movies" class="movie-card">
+      <img [src]="movie.imageUrl" alt="{{ movie.title }}"/>
+      <!-- <h4>{{ movie.title }}</h4> -->
+    </div>
+  </div>
+  </div>
+
+<div class="movie">
+  <h2 class="p-3" style="color: red;">ADVENTURE PLAYLIST</h2>
+<div class="movie-slider">
+    <div *ngFor="let movie of advMovies" class="movie-card">
+      <img [src]="movie.imageUrl" alt="{{ movie.title }}"/>
+      <!-- <h4>{{ movie.title }}</h4> -->
+    </div>
+  </div>
+</div>
+
+<div class="movie">
+</div>
+  <h2 class="p-3">FRIENDSHIP ANYWHERE</h2>
+<div class="movie-slider">
+    <div *ngFor="let movie of frdMovies" class="movie-card">
+      <img [src]="movie.imageUrl" alt="{{ movie.title }}"/>
+      <!-- <h4>{{ movie.title }}</h4> -->
+    </div>
+  </div>
+  
+<div class="movie">
+</div>
+  <h2 class="p-3" style="color: red;">POPULAR NOW</h2>
+<div class="movie-slider">
+    <div *ngFor="let movie of popMovies" class="movie-card">
+      <img [src]="movie.imageUrl" alt="{{ movie.title }}"/>
+      <!-- <h4>{{ movie.title }}</h4> -->
+    </div>
+  </div>
+  
+<div class="movie">
+  <h2 class="p-3">ROMANTIC CORNER</h2>
+<div class="movie-slider">
+    <div *ngFor="let movie of romMovies" class="movie-card">
+      <img [src]="movie.imageUrl" alt="{{ movie.title }}"/>
+      <!-- <h4>{{ movie.title }}</h4> -->
+    </div>
+  </div>
+</div>
+
+<div class="movie"> 
+  <h2 class="p-3" style="color: red;">THRILLER PULSES</h2>
+<div class="movie-slider">
+    <div *ngFor="let movie of thrlMovies" class="movie-card">
+      <img [src]="movie.imageUrl" alt="{{ movie.title }}"/>
+      <!-- <h4>{{ movie.title }}</h4> -->
+    </div>
+  </div>
+</div>
+</body>
